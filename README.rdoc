@@ -1,6 +1,28 @@
-= placebook
+= Placebook
 
-Description goes here.
+Placebook is a simple API wrapper for the Facebook Places API. It utilizes the
+Facebook Graph API to pull information about places from Facebook.
+
+== Installation
+
+	gem install placebook
+	
+== Usage
+
+Facebook has only exposed a limited feature set for the Places API at the moment.
+This gem will continue to track Facebook Places development and release new
+versions for functionality as it comes online.
+
+	places = Placebook::Client.new('app_id', 'app_secret', 'access_token')
+
+	# Get a specific checkin by ID
+	places.checkin('123') # => <Placebook::Checkin ...>
+	
+	# Get recent checkins for a user, page, or other entity
+	places.checkins_for('mbleigh') # => [checkin, checkin, checkin, ...]
+	
+	# Search for checkins
+	places.search('taco') # => [checkin, checkin, checkin]
 
 == Note on Patches/Pull Requests
  
