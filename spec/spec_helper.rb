@@ -8,7 +8,9 @@ require 'spec/autorun'
 
 def checkin_hash(attributes = {})
   {
-    :id => rand(10000000).to_s
+    'id' => rand(10000000).to_s,
+    'from' => {'name' => 'User Guy'},
+    'place' => {'name' => 'Awesome Place', 'location' => {'city' => 'Whatever'}}
   }.merge(attributes)
 end
 

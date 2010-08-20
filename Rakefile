@@ -13,7 +13,7 @@ begin
     gem.add_development_dependency "rspec", ">= 1.2.9"
     gem.add_development_dependency "jeweler"
     gem.add_dependency "oauth2"
-    gem.add_dependency "hashie"
+    gem.add_dependency "hashie", ">= 0.3.1"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new

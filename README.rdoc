@@ -21,8 +21,8 @@ versions for functionality as it comes online.
 	# Get recent checkins for a user, page, or other entity
 	places.checkins_for('mbleigh') # => [checkin, checkin, checkin, ...]
 	
-	# Search for checkins
-	places.search('taco') # => [checkin, checkin, checkin]
+	# Search for checkins -- DOESN'T SEEM TO BE ACTIVE YET
+	# places.search('taco') # => [checkin, checkin, checkin]
 
 == Note on Patches/Pull Requests
  

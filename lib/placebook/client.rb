@@ -23,22 +23,24 @@ module Placebook
     end
     
     # Search for checkins with the given query.
-    def search(query)
-      checkinize(token.get("/search", :q => query, :type => 'checkin'))
-    end
+    # def search(query)
+    #   checkinize(token.get("/search", :q => query, :type => 'checkin'))
+    # end
     
     def token#:nodoc:
       OAuth2::AccessToken.new(client, access_token)
     end
     
     def client#:nodoc:
-      @client ||= OAuth2::Client.new(app_id, app_secret)
+      @client ||= OAuth2::Client.new(app_id, app_secret, :site => 'https://graph.facebook.com')
     end
     
     protected
     
     def checkinize(string)#:nodoc:
-      case obj = MultiJson.decode(string)
+      obj = MultiJson.decode(string)
+      obj = obj['data'] if obj.is_a?(::Hash) && obj.key?('data')
+      case obj
         when Hash
           Checkin.new(obj)
         when Array
