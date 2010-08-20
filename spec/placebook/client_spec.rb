@@ -9,7 +9,7 @@ describe Placebook::Client do
       client.access_token.should == 'hgi'
     end
   end
-  
+
   context 'initialized' do
     subject{ Placebook::Client.new('abc', 'def', 'hgi')}
 
@@ -22,17 +22,17 @@ describe Placebook::Client do
         end
       end
     end
-    
+  
     describe '#checkin' do
       it 'should be a single checkin' do
         subject.checkin('123').should be_kind_of(Placebook::Checkin)
       end
-      
+    
       it 'should have the returned attributes' do
         subject.checkin('123').id.should == '123'
       end
     end
-    
+  
     describe '#checkins_for' do
       it 'should be a list of checkins' do
         ins = subject.checkins_for('someone')
@@ -40,7 +40,7 @@ describe Placebook::Client do
         ins.reject{|i| i.kind_of?(Placebook::Checkin)}.should be_empty
       end
     end
-    
+  
     describe '#search' do
       it 'should be a list of checkins' do
         ins = subject.search('hello')

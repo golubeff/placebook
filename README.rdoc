@@ -6,7 +6,7 @@ Facebook Graph API to pull information about places from Facebook.
 == Installation
 
 	gem install placebook
-	
+
 == Usage
 
 Facebook has only exposed a limited feature set for the Places API at the moment.
@@ -17,15 +17,15 @@ versions for functionality as it comes online.
 
 	# Get a specific checkin by ID
 	places.checkin('123') # => <Placebook::Checkin ...>
-	
+
 	# Get recent checkins for a user, page, or other entity
 	places.checkins_for('mbleigh') # => [checkin, checkin, checkin, ...]
-	
+
 	# Search for checkins -- DOESN'T SEEM TO BE ACTIVE YET
 	# places.search('taco') # => [checkin, checkin, checkin]
 
 == Note on Patches/Pull Requests
- 
+
 * Fork the project.
 * Make your feature addition or bug fix.
 * Add tests for it. This is important so I don't break it in a

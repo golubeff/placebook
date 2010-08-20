@@ -19,5 +19,5 @@ def checkin_json(attributes = {})
 end
 
 Spec::Runner.configure do |config|
-  
+
 end

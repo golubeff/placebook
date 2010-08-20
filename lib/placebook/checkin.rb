@@ -8,17 +8,17 @@ module Placebook
       super(hash, *args)
     end
   end
-  
+
   class Place < Hashie::Mash
     def initialize(hash, *args)
       hash['location'] = Location.new(hash['location']) if hash['location']
       super(hash, *args)
     end
   end
-  
+
   class Location < Hashie::Mash
   end
-  
+
   class User < Hashie::Mash
   end
 end
