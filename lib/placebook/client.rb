@@ -1,4 +1,4 @@
-module Placebook
+class Placebook
   class Client
     attr_reader :app_id, :app_secret, :access_token
   
