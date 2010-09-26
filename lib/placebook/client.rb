@@ -15,7 +15,7 @@ class Placebook
     def checkin(id)
       checkinize(token.get("/#{id}"))
     end
-  
+
     # Retrieves a group of checkins for a specific user,
     # page, user id, or page id.
     def checkins_for(entity)
@@ -23,9 +23,9 @@ class Placebook
     end
   
     # Search for checkins with the given query.
-    # def search(query)
-    #   checkinize(token.get("/search", :q => query, :type => 'checkin'))
-    # end
+    def search(query, args={})
+      checkinize(token.get("/search", { :q => query, :type => 'place' }.merge(args)))
+    end
   
     def token#:nodoc:
       OAuth2::AccessToken.new(client, access_token)
